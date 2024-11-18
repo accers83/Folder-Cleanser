@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FolderCleanserDB", "FolderCleanserDB\FolderCleanserDB.sqlproj", "{6DF21668-C7C4-45D7-BAF4-AFCDA3F7024F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserBackEndLibrary", "FolderCleanserBackEndLibrary\FolderCleanserBackEndLibrary.csproj", "{D5F9A215-F4B5-4814-ACAB-774B706700AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{6DF21668-C7C4-45D7-BAF4-AFCDA3F7024F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF21668-C7C4-45D7-BAF4-AFCDA3F7024F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DF21668-C7C4-45D7-BAF4-AFCDA3F7024F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
