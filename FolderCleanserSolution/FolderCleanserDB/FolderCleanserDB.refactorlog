@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="a5c29518-e88d-4708-a5b2-c75c4753d8f6" ChangeDateTime="11/18/2024 06:42:42">
+    <Property Name="ElementName" Value="[dbo].[SummaryHistory].[ProcessingDuration]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SummaryHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProcessingDurationMins" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="011ce1b1-a591-40c4-b2cd-d0091d3d4710" ChangeDateTime="11/18/2024 06:44:55">
+    <Property Name="ElementName" Value="[dbo].[SummaryHistory].[SizeDeletedTotal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SummaryHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DeletedTotal" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="57a1981b-e29e-4465-9c5f-6d306958caf8" ChangeDateTime="11/18/2024 06:45:05">
+    <Property Name="ElementName" Value="[dbo].[SummaryHistory].[FilesDeletedTotal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SummaryHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FilesDeletedCount" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5527f77f-f636-478a-96e6-37bb7676be4c" ChangeDateTime="11/18/2024 06:47:01">
+    <Property Name="ElementName" Value="[dbo].[SummaryHistory].[DeletedTotal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SummaryHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FileSizeDeletedBytes" />
+  </Operation>
+</Operations>
