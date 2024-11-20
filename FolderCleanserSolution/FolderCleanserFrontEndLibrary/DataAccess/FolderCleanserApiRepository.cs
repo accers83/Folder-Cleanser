@@ -43,12 +43,41 @@ public class FolderCleanserApiRepository : IFolderCleanserApiRepository
         return output;
     }
 
+    public async Task<PathModel> GetPathAsync(int id)
+    {
+        var requestUri = _baseApiUrl + "/api/Path/" + id;
+        PathModel output = new();
+
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.GetAsync(requestUri);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var responseText = await response.Content.ReadAsStringAsync();
+            var options = new JsonSerializerOptions()
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            output = JsonSerializer.Deserialize<PathModel>(responseText, options);
+        }
+
+        return output;
+    }
+
     public async Task AddPathAsync(PathModel path)
     {
         var requestUri = _baseApiUrl + "/api/Path/";
         var client = _httpClientFactory.CreateClient();
         var response = await client.PostAsync(requestUri,
                                               new StringContent(JsonSerializer.Serialize(path), encoding: Encoding.UTF8, "application/json"));
+    }
+
+    public async Task DeletePathAsync(int id)
+    {
+        var requestUri = _baseApiUrl + "/api/Path/" + id;
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.DeleteAsync(requestUri);
     }
 
     public async Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync(int pathId = 0)

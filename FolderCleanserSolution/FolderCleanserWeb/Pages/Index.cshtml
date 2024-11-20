@@ -12,6 +12,9 @@
         <thead>
             <tr>
                 <th scope="col">
+                    Id
+                </th>
+                <th scope="col">
                     Path
                 </th>
                 <th scope="col">
@@ -22,12 +25,17 @@
                 </th>
                 <th scope="col">
                 </th>
+                <th scope="col">
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Paths)
             {
-                <tr>
+                <tr class="align-middle">
+                    <td scope="row">
+                        @item.Id
+                    </td>
                     <td scope="row">
                         @item.Path
                     </td>
@@ -39,6 +47,9 @@
                     </td>
                     <td>
                         <a class="btn btn-sm btn-success" asp-page="/SummaryHistories" asp-route-pathId="@item.Id">Summary History</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" asp-page="/DeletePath" asp-route-pathId="@item.Id">Delete Path</a>
                     </td>
                 </tr>
             }

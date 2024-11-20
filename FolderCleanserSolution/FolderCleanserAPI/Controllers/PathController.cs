@@ -19,6 +19,41 @@ public class PathController : ControllerBase
         _logger = logger;
     }
 
+    // GET: api/<PathController>/5
+    [HttpGet("{id}")]
+    public PathModel Get(string id)
+    {
+        bool isValidBool = int.TryParse(id, out int value);
+
+        if (string.IsNullOrWhiteSpace(id))
+        {
+            _logger.LogError("Invalid request, no Id provided");
+            throw new BadHttpRequestException("Invalid request, no Id provided", 400);
+        }
+        else if (isValidBool == false)
+        {
+            _logger.LogError("Invalid request, invalid Id provided");
+            throw new BadHttpRequestException("Invalid request, invalid Id provided", 400);
+        }
+        else
+        {
+            var path = _folderCleanserRepository.GetPath(value);
+
+            if (path is null)
+            {
+                _logger.LogError("Invalid request, id not found");
+                throw new BadHttpRequestException("Invalid request, id not found", 400);
+            }
+            else if (path.Deleted is not null)
+            {
+                _logger.LogError("Invalid request, path already deleted");
+                throw new BadHttpRequestException("Invalid request, path already deleted", 400);
+            }
+
+            return _folderCleanserRepository.GetPath(value);
+        }
+    }
+
     // GET: api/<PathController>
     [HttpGet]
     public List<PathModel> Get()

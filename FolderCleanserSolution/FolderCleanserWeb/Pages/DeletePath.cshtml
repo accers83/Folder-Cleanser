@@ -1,0 +1,46 @@
+﻿@page
+@model FolderCleanserWeb.Pages.DeletePathModel
+
+
+@{
+    ViewData["Title"] = "Confirm Path Deletion";
+}
+
+<h1>Confirm Path Deletion</h1>
+<br />
+
+
+@if (Path is not null)
+{
+
+    <div class ="card text-dark bg-light mb-3">
+        <div class="card-header">
+            <strong>Path Details</strong>
+        </div>
+        <div class ="card-body">
+            <p><strong>Path [@Model.Path.Id]:</strong> @Model.Path.Path</p>
+            <p><strong>Retention Period (days):</strong> @Model.Path.RetentionDays</p>
+            <p><strong>Created:</strong> @Model.Path.Created.ToShortDateString()</p>
+        </div>
+    </div>
+
+    <br />
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="ConfirmDelete"><strong>Check to confirm delete</strong></label>
+            <input type="checkbox" asp-for="ConfirmDelete" />
+        </div>
+        
+        <div>
+            <button type="submit" class="btn btn-danger">Delete Path</button>
+            <a class="btn btn-success" asp-page="./Index">Cancel</a>
+        </div>
+    </form>
+}
+else
+{
+    <p><strong>No results found for Path ID: @Model.PathId</strong></p>
+}
+
+

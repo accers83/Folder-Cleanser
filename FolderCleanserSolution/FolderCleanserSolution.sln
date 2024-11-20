@@ -7,11 +7,11 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FolderCleanserDB", "FolderC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserBackEndLibrary", "FolderCleanserBackEndLibrary\FolderCleanserBackEndLibrary.csproj", "{D5F9A215-F4B5-4814-ACAB-774B706700AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserAPI", "FolderCleanserAPI\FolderCleanserAPI.csproj", "{94C89D24-0886-4288-8693-E80362692E9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserAPI", "FolderCleanserAPI\FolderCleanserAPI.csproj", "{94C89D24-0886-4288-8693-E80362692E9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserWeb", "FolderCleanserWeb\FolderCleanserWeb.csproj", "{006761CE-64EE-4453-B907-45633C98EE28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserWeb", "FolderCleanserWeb\FolderCleanserWeb.csproj", "{006761CE-64EE-4453-B907-45633C98EE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserFrontEndLibrary", "FolderCleanserFrontEndLibrary\FolderCleanserFrontEndLibrary.csproj", "{ABA4A057-9081-4EE9-8326-23A68303D2E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserFrontEndLibrary", "FolderCleanserFrontEndLibrary\FolderCleanserFrontEndLibrary.csproj", "{ABA4A057-9081-4EE9-8326-23A68303D2E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
