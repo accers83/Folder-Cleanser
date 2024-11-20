@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FolderCleanserDB", "FolderCleanserDB\FolderCleanserDB.sqlproj", "{6DF21668-C7C4-45D7-BAF4-AFCDA3F7024F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserBackEndLibrary", "FolderCleanserBackEndLibrary\FolderCleanserBackEndLibrary.csproj", "{D5F9A215-F4B5-4814-ACAB-774B706700AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserBackEndLibrary", "FolderCleanserBackEndLibrary\FolderCleanserBackEndLibrary.csproj", "{D5F9A215-F4B5-4814-ACAB-774B706700AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserAPI", "FolderCleanserAPI\FolderCleanserAPI.csproj", "{94C89D24-0886-4288-8693-E80362692E9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F9A215-F4B5-4814-ACAB-774B706700AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C89D24-0886-4288-8693-E80362692E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C89D24-0886-4288-8693-E80362692E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C89D24-0886-4288-8693-E80362692E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C89D24-0886-4288-8693-E80362692E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
