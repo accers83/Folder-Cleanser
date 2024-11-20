@@ -5,10 +5,11 @@
     ViewData["Title"] = "Summary Histories";
 }
 
+<h1 class="display-4">Summary Histories</h1>
+<br />
+
 @if (Model.SummaryHistories?.Any() == true)
 {
-    <h1 class="display-4">Summary Histories</h1>
-
     <table class="table table-striped">
         <thead>
             <tr>
@@ -52,5 +53,9 @@
             }
         </tbody>
     </table>
+} 
+else
+{
+    <p><strong>No results found for Path ID: @Model.PathId</strong></p>
 }
 

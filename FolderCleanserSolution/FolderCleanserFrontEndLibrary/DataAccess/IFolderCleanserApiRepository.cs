@@ -1,11 +1,10 @@
 ﻿using FolderCleanserFrontEndLibrary.Models;
 
-namespace FolderCleanserFrontEndLibrary.DataAccess
+namespace FolderCleanserFrontEndLibrary.DataAccess;
+
+public interface IFolderCleanserApiRepository
 {
-    public interface IFolderCleanserApiRepository
-    {
-        Task AddPathAsync(PathModel path);
-        Task<List<PathModel>> GetPathsAsync();
-        Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync();
-    }
+    Task AddPathAsync(PathModel path);
+    Task<List<PathModel>> GetPathsAsync();
+    Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync(int pathId = 0);
 }

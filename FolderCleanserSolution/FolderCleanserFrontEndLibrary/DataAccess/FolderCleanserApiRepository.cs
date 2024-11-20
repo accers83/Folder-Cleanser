@@ -51,9 +51,14 @@ public class FolderCleanserApiRepository : IFolderCleanserApiRepository
                                               new StringContent(JsonSerializer.Serialize(path), encoding: Encoding.UTF8, "application/json"));
     }
 
-    public async Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync()
+    public async Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync(int pathId = 0)
     {
         var requestUri = _baseApiUrl + "/api/SummaryHistory/";
+        if (pathId > 0)
+        {
+            requestUri += pathId;
+        }
+
         List<SummaryHistoryModel> output = new();
 
         var client = _httpClientFactory.CreateClient();

@@ -9,6 +9,9 @@ public class SummaryHistoriesModel : PageModel
 {
     private readonly IFolderCleanserApiRepository _data;
 
+    [BindProperty(SupportsGet = true)]
+    public int PathId { get; set; } = 0;
+
     [BindProperty]
     public List<SummaryHistoryModel> SummaryHistories { get; set; }
 
@@ -19,6 +22,13 @@ public class SummaryHistoriesModel : PageModel
 
     public async Task OnGet()
     {
-        SummaryHistories = await _data.GetSummaryHistoriesAsync();
+        if (PathId > 0)
+        {
+            SummaryHistories = await _data.GetSummaryHistoriesAsync(PathId);
+        }
+        else
+        {
+            SummaryHistories = await _data.GetSummaryHistoriesAsync();
+        }
     }
 }

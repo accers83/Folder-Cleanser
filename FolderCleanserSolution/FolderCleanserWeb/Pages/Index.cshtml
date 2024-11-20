@@ -20,6 +20,8 @@
                 <th scope="col">
                     Created
                 </th>
+                <th scope="col">
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +36,9 @@
                     </td>
                     <td>
                         @item.Created.ToShortDateString()
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-success" asp-page="/SummaryHistories" asp-route-pathId="@item.Id">Summary History</a>
                     </td>
                 </tr>
             }
