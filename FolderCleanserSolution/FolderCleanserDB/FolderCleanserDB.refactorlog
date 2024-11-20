@@ -35,4 +35,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ProcessingEndDateTime" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="558d7932-7651-4ab8-aed7-1d6935e42051" ChangeDateTime="11/20/2024 06:46:17">
+    <Property Name="ElementName" Value="[dbo].[SummaryHistory].[FileSizeDeletedBytes]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SummaryHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FileSizeDeletedMB" />
+  </Operation>
 </Operations>

@@ -68,7 +68,8 @@
     <Build Include="dbo\Stored Procedures\spPath_Insert.sql" />
     <Build Include="dbo\Stored Procedures\spSummaryHistory_GetByPathId.sql" />
     <Build Include="dbo\Stored Procedures\spPath_DeleteById.sql" />
-    <Build Include="dbo\Stored Procedures\SummaryHistory_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spSummaryHistory_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spSummaryHistory_Get.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FolderCleanserDB.refactorlog" />

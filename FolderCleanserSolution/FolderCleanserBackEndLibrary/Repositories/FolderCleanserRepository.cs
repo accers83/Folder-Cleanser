@@ -78,19 +78,21 @@ public class FolderCleanserRepository : IFolderCleanserRepository
     public List<SummaryHistoryModel> GetSummaryHistory(int pathId = 0)
     {
         List<SummaryHistoryModel> output = new();
+        var connectionStringName = "FolderCleanserDB";
 
         if (pathId == 0)
         {
-            output = _db.LoadData<SummaryHistoryModel, dynamic>("dbo.spSummaryHistory_GetByPathId",
-                                                                          new { PathId = pathId },
-                                                                          "FolderCleanserDB",
-                                                                          true);
+            output = _db.LoadData<SummaryHistoryModel, dynamic>("dbo.spSummaryHistory_Get",
+                                                              new { },
+                                                              connectionStringName,
+                                                              true);
         }
         else
         {
-            output = _db.LoadData<SummaryHistoryModel, dynamic>("select * from dbo.SummaryHistory",
-                                                              new { },
-                                                              "FolderCleanserDB");
+            output = _db.LoadData<SummaryHistoryModel, dynamic>("dbo.spSummaryHistory_GetByPathId",
+                                                                          new { PathId = pathId },
+                                                                          connectionStringName,
+                                                                          true);
         }
 
         return output;
@@ -98,8 +100,16 @@ public class FolderCleanserRepository : IFolderCleanserRepository
 
     public void AddSummaryHistory(SummaryHistoryModel summaryHistory)
     {
-        _db.SaveData<dynamic>("dbo.SummaryHistory_Insert",
-                              summaryHistory,
+        _db.SaveData<dynamic>("dbo.spSummaryHistory_Insert",
+                              new
+                              {
+                                  summaryHistory.PathId,
+                                  summaryHistory.ProcessingStartDateTime,
+                                  summaryHistory.ProcessingEndDateTime,
+                                  summaryHistory.ProcessingDurationMins,
+                                  summaryHistory.FilesDeletedCount,
+                                  summaryHistory.FileSizeDeletedMB
+                              },
                               "FolderCleanserDB",
                               true);
     }

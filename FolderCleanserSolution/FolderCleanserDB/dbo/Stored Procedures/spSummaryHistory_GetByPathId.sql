@@ -5,15 +5,18 @@ begin
 
 	set nocount on;
 
-	select [Id]
-		,[PathId]
-		,[ProcessingStartDateTime]
-		,[ProcessingEndDateTime]
-		,[ProcessingDurationMins]
-		,[FilesDeletedCount]
-		,[FileSizeDeletedBytes]
+	select s.[Id]
+		,s.[PathId]
+		,s.[ProcessingStartDateTime]
+		,s.[ProcessingEndDateTime]
+		,s.[ProcessingDurationMins]
+		,s.[FilesDeletedCount]
+		,s.[FileSizeDeletedMB]
 	
-	from dbo.SummaryHistory
-	where PathId = @PathId
+	from dbo.SummaryHistory as s
+
+		inner join dbo.[Path] as p on s.PathId = p.Id
+									and p.Deleted is null
+									and PathId = @PathId
 
 end
