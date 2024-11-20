@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderCleanserBackEndLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserAPI", "FolderCleanserAPI\FolderCleanserAPI.csproj", "{94C89D24-0886-4288-8693-E80362692E9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserWeb", "FolderCleanserWeb\FolderCleanserWeb.csproj", "{006761CE-64EE-4453-B907-45633C98EE28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{94C89D24-0886-4288-8693-E80362692E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C89D24-0886-4288-8693-E80362692E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C89D24-0886-4288-8693-E80362692E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006761CE-64EE-4453-B907-45633C98EE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006761CE-64EE-4453-B907-45633C98EE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006761CE-64EE-4453-B907-45633C98EE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006761CE-64EE-4453-B907-45633C98EE28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
