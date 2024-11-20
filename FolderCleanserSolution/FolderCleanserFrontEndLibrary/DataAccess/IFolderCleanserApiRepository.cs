@@ -2,8 +2,9 @@
 
 namespace FolderCleanserFrontEndLibrary.DataAccess
 {
-    public interface IDataCleanserApiRepository
+    public interface IFolderCleanserApiRepository
     {
+        Task AddPathAsync(PathModel path);
         Task<List<PathModel>> GetPathsAsync();
     }
 }

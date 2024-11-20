@@ -1,0 +1,36 @@
+﻿@page
+@model FolderCleanserWeb.Pages.PathEntryModel
+
+
+@{
+    ViewData["Title"] = "Add Path";
+}
+
+<h1>Add Path</h1>
+<br />
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Path.Path"></label>
+        <input type="text" asp-for="Path.Path" />
+        <div>
+            <span asp-validation-for="Path.Path" class="text-danger" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Path.RetentionDays"></label>
+        <input type="number" asp-for="Path.RetentionDays" />
+        <div>
+            <span asp-validation-for="Path.RetentionDays" class="text-danger" />
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
