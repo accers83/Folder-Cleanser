@@ -50,4 +50,26 @@ public class FolderCleanserApiRepository : IFolderCleanserApiRepository
         var response = await client.PostAsync(requestUri,
                                               new StringContent(JsonSerializer.Serialize(path), encoding: Encoding.UTF8, "application/json"));
     }
+
+    public async Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync()
+    {
+        var requestUri = _baseApiUrl + "/api/SummaryHistory/";
+        List<SummaryHistoryModel> output = new();
+
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.GetAsync(requestUri);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var responseText = await response.Content.ReadAsStringAsync();
+            var options = new JsonSerializerOptions()
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            output = JsonSerializer.Deserialize<List<SummaryHistoryModel>>(responseText, options);
+        }
+
+        return output;
+    }
 }

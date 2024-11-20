@@ -8,7 +8,7 @@ public class SummaryHistoryModel
     public DateTime ProcessingEndDateTime { get; set; }
     public int ProcessingDurationMins { get; set; }
     public int FilesDeletedCount { get; set; }
-    public int FileSizeDeletedMB { get; set; }
+    public double FileSizeDeletedMB { get; set; }
 }
 
 

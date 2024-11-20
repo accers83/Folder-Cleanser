@@ -1,0 +1,56 @@
+﻿@page
+@model FolderCleanserWeb.Pages.SummaryHistoriesModel
+
+@{
+    ViewData["Title"] = "Summary Histories";
+}
+
+@if (Model.SummaryHistories?.Any() == true)
+{
+    <h1 class="display-4">Summary Histories</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Path Id
+                </th>
+                <th scope="col">
+                    Processing Start DateTime
+                </th>
+                <th scope="col">
+                    Processing Duration (Mins)
+                </th>
+                <th scope="col">
+                    Files Deleted (Count)
+                </th>
+                <th scope="col">
+                    File Size Deleted (MB)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.SummaryHistories)
+            {
+                <tr>
+                    <td scope="row">
+                        @item.PathId
+                    </td>
+                    <td>
+                        @item.ProcessingStartDateTime.ToString("dd/MM/yyyy HH:mm")
+                    </td>
+                    <td>
+                        @item.ProcessingDurationMins
+                    </td>
+                    <td>
+                        @item.FilesDeletedCount
+                    </td>
+                    <td>
+                        @item.FileSizeDeletedMB
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

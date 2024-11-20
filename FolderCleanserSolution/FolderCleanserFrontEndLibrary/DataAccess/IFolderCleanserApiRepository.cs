@@ -6,5 +6,6 @@ namespace FolderCleanserFrontEndLibrary.DataAccess
     {
         Task AddPathAsync(PathModel path);
         Task<List<PathModel>> GetPathsAsync();
+        Task<List<SummaryHistoryModel>> GetSummaryHistoriesAsync();
     }
 }
