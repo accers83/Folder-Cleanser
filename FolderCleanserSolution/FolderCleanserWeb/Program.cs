@@ -1,8 +1,11 @@
+using FolderCleanserFrontEndLibrary.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
+builder.Services.AddTransient<IDataCleanserApiRepository, DataCleanserApiRepository>();
 
 var app = builder.Build();
 

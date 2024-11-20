@@ -1,20 +1,23 @@
-using Microsoft.AspNetCore.Mvc;
+using FolderCleanserFrontEndLibrary.DataAccess;
+using FolderCleanserFrontEndLibrary.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FolderCleanserWeb.Pages
+namespace FolderCleanserWeb.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ILogger<IndexModel> _logger;
+    private readonly IDataCleanserApiRepository _data;
+    public List<PathModel> Paths { get; set; }
+
+    public IndexModel(ILogger<IndexModel> logger, IDataCleanserApiRepository data)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _logger = logger;
+        _data = data;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
-        }
+    public async Task OnGetAsync()
+    {
+        Paths = await _data.GetPathsAsync();
     }
 }

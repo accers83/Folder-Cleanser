@@ -4,7 +4,39 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.Paths?.Any() == true)
+{
+    <h1 class="display-4">Paths</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Path
+                </th>
+                <th scope="col">
+                    Retention Period (Days)
+                </th>
+                <th scope="col">
+                    Created
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Paths)
+            {
+                <tr>
+                    <td scope="row">
+                        @item.Path
+                    </td>
+                    <td>
+                        @item.RetentionDays
+                    </td>
+                    <td>
+                        @item.Created.ToShortDateString()
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

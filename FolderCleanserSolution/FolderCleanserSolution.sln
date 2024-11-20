@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserAPI", "Folder
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserWeb", "FolderCleanserWeb\FolderCleanserWeb.csproj", "{006761CE-64EE-4453-B907-45633C98EE28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderCleanserFrontEndLibrary", "FolderCleanserFrontEndLibrary\FolderCleanserFrontEndLibrary.csproj", "{ABA4A057-9081-4EE9-8326-23A68303D2E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{006761CE-64EE-4453-B907-45633C98EE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{006761CE-64EE-4453-B907-45633C98EE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{006761CE-64EE-4453-B907-45633C98EE28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA4A057-9081-4EE9-8326-23A68303D2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA4A057-9081-4EE9-8326-23A68303D2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA4A057-9081-4EE9-8326-23A68303D2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA4A057-9081-4EE9-8326-23A68303D2E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
