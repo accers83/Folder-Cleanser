@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Production": {
+      "commandName": "Project",
+      "commandLineArgs": "prod"
+    },
+    "Option 1 prod": {
+      "commandName": "Project",
+      "commandLineArgs": "1 prod"
+    }
+  }
+}
