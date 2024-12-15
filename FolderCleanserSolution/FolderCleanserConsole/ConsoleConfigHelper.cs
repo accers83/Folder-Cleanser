@@ -67,7 +67,8 @@ internal static class ConsoleConfigHelper
             .WriteTo.Console())
 
         .ConfigureServices(services => services
-            .AddTransient<IApplicationMain, ApplicationMain>())
+            .AddTransient<IApplicationMain, ApplicationMain>()
+            .AddHttpClient())
 
         .ConfigureHostConfiguration(config => config
             .SetBasePath(Directory.GetCurrentDirectory())
