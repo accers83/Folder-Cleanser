@@ -2,7 +2,7 @@
 	@PathId int,
 	@ProcessingStartDateTime datetime2(7),
 	@ProcessingEndDateTime datetime2(7),
-	@ProcessingDurationMins int,
+	@ProcessingDurationMins float,
 	@FilesDeletedCount int,
 	@FileSizeDeletedMB float
 AS

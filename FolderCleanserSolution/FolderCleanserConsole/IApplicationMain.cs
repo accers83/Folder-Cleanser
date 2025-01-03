@@ -2,5 +2,5 @@
 
 internal interface IApplicationMain
 {
-    void Run(int option);
+    Task RunAsync(int option);
 }

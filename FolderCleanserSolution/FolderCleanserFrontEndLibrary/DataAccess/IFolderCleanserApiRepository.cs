@@ -5,6 +5,7 @@ namespace FolderCleanserFrontEndLibrary.DataAccess;
 public interface IFolderCleanserApiRepository
 {
     Task AddPathAsync(PathModel path);
+    Task AddSummaryHistoryAsync(SummaryHistoryModel summaryHistory);
     Task DeletePathAsync(int id);
     Task<PathModel> GetPathAsync(int id);
     Task<List<PathModel>> GetPathsAsync();

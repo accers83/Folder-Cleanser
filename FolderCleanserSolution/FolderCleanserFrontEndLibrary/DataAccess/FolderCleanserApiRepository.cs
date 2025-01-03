@@ -73,6 +73,14 @@ public class FolderCleanserApiRepository : IFolderCleanserApiRepository
                                               new StringContent(JsonSerializer.Serialize(path), encoding: Encoding.UTF8, "application/json"));
     }
 
+    public async Task AddSummaryHistoryAsync(SummaryHistoryModel summaryHistory)
+    {
+        var requestUri = _baseApiUrl + "/api/SummaryHistory/";
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.PostAsync(requestUri,
+                                              new StringContent(JsonSerializer.Serialize(summaryHistory), encoding: Encoding.UTF8, "application/json"));
+    }
+
     public async Task DeletePathAsync(int id)
     {
         var requestUri = _baseApiUrl + "/api/Path/" + id;

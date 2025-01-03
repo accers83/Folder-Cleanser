@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FolderCleanserConsole.Services;
 using Microsoft.Extensions.Logging;
 
 namespace FolderCleanserConsole;
@@ -6,15 +6,15 @@ namespace FolderCleanserConsole;
 internal class ApplicationMain : IApplicationMain
 {
     private readonly ILogger<ApplicationMain> _logger;
-    private readonly IConfiguration _config;
+    private readonly IFolderCleanserService _folderCleanserService;
 
-    public ApplicationMain(ILogger<ApplicationMain> logger, IConfiguration config)
+    public ApplicationMain(ILogger<ApplicationMain> logger, IFolderCleanserService folderCleanserService)
     {
         _logger = logger;
-        _config = config;
+        _folderCleanserService = folderCleanserService;
     }
 
-    public void Run(int option)
+    public async Task RunAsync(int option)
     {
         _logger.LogInformation($"Application started with option {option}.");
 
@@ -25,10 +25,7 @@ internal class ApplicationMain : IApplicationMain
                 break;
 
             case 1:
-                _logger.LogInformation("Display value from appsettings, IsProduction: {IsProduction}", _config.GetValue<bool>("IsProduction"));
-                _logger.LogInformation("Display value from appsettings, IsDevelopment: {IsDevelopment}", _config.GetValue<bool>("IsDevelopment"));
-                _logger.LogInformation("Display value from appsettings, TestString: {TestString}", _config.GetValue<string>("TestString"));
-                _logger.LogInformation("Display value from appsettings, TestInt: {TestInt}", _config.GetValue<int>("TestInt"));
+                await _folderCleanserService.InitiateAsync();
                 break;
 
             default:

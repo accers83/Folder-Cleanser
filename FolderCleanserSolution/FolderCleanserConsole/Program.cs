@@ -24,7 +24,7 @@ try
     var applicationMain = ActivatorUtilities.GetServiceOrCreateInstance<IApplicationMain>(host.Services);
     var option = ConsoleConfigHelper.GetOption(args);
 
-    applicationMain.Run(option);
+    await applicationMain.RunAsync(option);
 
     Log.Information("Application completed cleanly.");
     return 0;
