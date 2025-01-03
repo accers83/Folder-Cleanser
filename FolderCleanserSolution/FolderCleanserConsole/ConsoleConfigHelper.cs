@@ -1,4 +1,5 @@
-﻿using FolderCleanserConsole.Services;
+﻿using FolderCleanserConsole.Processors;
+using FolderCleanserConsole.Services;
 using FolderCleanserFrontEndLibrary.DataAccess;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -72,6 +73,7 @@ internal static class ConsoleConfigHelper
             .AddTransient<IApplicationMain, ApplicationMain>()
             .AddTransient<IFolderCleanserService, FolderCleanserService>()
             .AddTransient<IFolderCleanserApiRepository, FolderCleanserApiRepository>()
+            .AddTransient<IFolderCleanserProcessor, FolderCleanserProcessor>()
             .AddTransient<IFileSystemRepository, FileSystemRepository>()
             .AddHttpClient())
 
