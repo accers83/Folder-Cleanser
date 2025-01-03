@@ -1,5 +1,6 @@
 ﻿using FolderCleanserFrontEndLibrary.DataAccess;
 using FolderCleanserFrontEndLibrary.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
@@ -10,13 +11,15 @@ public class FolderCleanserService : IFolderCleanserService
     private readonly IFolderCleanserApiRepository _folderCleanserApiRepository;
     private readonly IFileSystemRepository _fileSystemRepository;
     private readonly ILogger<FolderCleanserService> _logger;
+    private readonly IConfiguration _config;
 
     public FolderCleanserService(IFolderCleanserApiRepository folderCleanserApiRepository, IFileSystemRepository fileSystemRepository,
-        ILogger<FolderCleanserService> logger)
+        ILogger<FolderCleanserService> logger, IConfiguration config)
     {
         _folderCleanserApiRepository = folderCleanserApiRepository;
         _fileSystemRepository = fileSystemRepository;
         _logger = logger;
+        _config = config;
     }
 
     public async Task InitiateAsync()
@@ -62,7 +65,19 @@ public class FolderCleanserService : IFolderCleanserService
 
                 summaryHistory.FilesDeletedCount++;
                 summaryHistory.FileSizeDeletedMB += _fileSystemRepository.GetFileSizeMB(file);
-                // TODO: delete file
+                
+                if (_config.GetValue<bool>("EnableFileDeletes") == true)
+                {
+                    try
+                    {
+                        File.Delete(file);
+                        _logger.LogInformation("File deleted");
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Exception deleting file from {file}");
+                    }
+                }
             }
         }
 
