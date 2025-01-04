@@ -10,6 +10,6 @@ namespace FolderCleanserBackEndLibrary.Repositories
         PathModel GetPath(int id);
         PathModel GetPath(string path);
         List<PathModel> GetPaths();
-        List<SummaryHistoryModel> GetSummaryHistory(int pathId = 0);
+        List<SummaryHistoryModel> GetSummaryHistories(int pathId = 0);
     }
 }

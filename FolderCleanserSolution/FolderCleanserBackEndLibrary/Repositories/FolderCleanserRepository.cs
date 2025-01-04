@@ -75,7 +75,7 @@ public class FolderCleanserRepository : IFolderCleanserRepository
                               true);
     }
 
-    public List<SummaryHistoryModel> GetSummaryHistory(int pathId = 0)
+    public List<SummaryHistoryModel> GetSummaryHistories(int pathId = 0)
     {
         List<SummaryHistoryModel> output = new();
         var connectionStringName = "FolderCleanserDB";

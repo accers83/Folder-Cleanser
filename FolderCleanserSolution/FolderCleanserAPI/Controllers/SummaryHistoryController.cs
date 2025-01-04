@@ -23,8 +23,8 @@ public class SummaryHistoryController : ControllerBase
     [HttpGet]
     public List<SummaryHistoryModel> Get()
     {
-        var summaryHistory = _folderCleanserRepository.GetSummaryHistory();
-        return summaryHistory;
+        var summaryHistories = _folderCleanserRepository.GetSummaryHistories();
+        return summaryHistories;
     }
 
     // GET: api/<SummaryHistoryController>/5
@@ -59,8 +59,8 @@ public class SummaryHistoryController : ControllerBase
                 throw new BadHttpRequestException("Invalid request, path is deleted", 400);
             }
 
-            var summaryHistory = _folderCleanserRepository.GetSummaryHistory(value);
-            return summaryHistory;
+            var summaryHistories = _folderCleanserRepository.GetSummaryHistories(value);
+            return summaryHistories;
         }
 
 
