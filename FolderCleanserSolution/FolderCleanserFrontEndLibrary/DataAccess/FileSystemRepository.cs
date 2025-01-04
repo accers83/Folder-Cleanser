@@ -1,7 +1,16 @@
-﻿namespace FolderCleanserFrontEndLibrary.DataAccess;
+﻿using FolderCleanserFrontEndLibrary.Helpers;
+
+namespace FolderCleanserFrontEndLibrary.DataAccess;
 
 public class FileSystemRepository : IFileSystemRepository
 {
+    private readonly IConversionHelper _conversionHelper;
+
+    public FileSystemRepository(IConversionHelper conversionHelper)
+    {
+        _conversionHelper = conversionHelper;
+    }
+
     public List<string> GetAllFiles(string path)
     {
         List<string> output = new();
@@ -27,7 +36,7 @@ public class FileSystemRepository : IFileSystemRepository
         double output = 0;
 
         var fileSizeBytes = new FileInfo(path).Length;
-        output = ((double)fileSizeBytes / 1024) / 1024;
+        output = _conversionHelper.ConvertBytesToMB(fileSizeBytes);
 
         return output;
     }
