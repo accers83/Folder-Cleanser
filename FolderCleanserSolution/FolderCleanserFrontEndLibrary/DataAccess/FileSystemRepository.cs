@@ -40,4 +40,9 @@ public class FileSystemRepository : IFileSystemRepository
 
         return output;
     }
+
+    public void DeleteFile(string path)
+    {
+        File.Delete(path);
+    }
 }

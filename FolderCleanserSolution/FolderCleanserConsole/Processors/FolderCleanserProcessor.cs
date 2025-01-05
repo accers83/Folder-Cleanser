@@ -53,7 +53,7 @@ public class FolderCleanserProcessor : IFolderCleanserProcessor
                 {
                     try
                     {
-                        File.Delete(file);
+                        _fileSystemRepository.DeleteFile(file);
                         _logger.LogInformation("File deleted");
                     }
                     catch (Exception ex)
